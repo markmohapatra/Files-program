@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <style>
+       body{background-image: url('Matrix.jpg');
+         background-size:150%;
+         background-repeat:no-repeat;  }
+</style>
+</head>
+
+<body>
+     <div style="text-align:center; padding:70px; background-color:lightgrey; border-radius:10px">
+     
+       <legend><h2 style="color:blue;">Guess the Number</h2></legend>
+      
+        <input type="number" id="t" placeholder="enter a 6digit number" name="n">
+                  
+        <button onclick="guessItem()";style="padding:2px;">Guess</button>
+        
+        <button onclick="reDirect()";style="padding:()2px;">Replay Game</button>
+                      <p id="delayMsg"></p>
+         <script>
+                      var x=localStorage.getItem("number");
+           
+                   function guessItem(){
+                        var y=document.getElementById("t").value
+                     
+                                   document.getElementById("t").value="";  
+                                   
+                                   if(y==x){
+                                      document.getElementById("delayMsg").innerHTML="6digitcorrect guesses";
+                                   }
+                                   else if(y==""){
+                                         alert("Enter a 6digit number"); 
+                                   }
+                                    else if(y.length>x.length){
+                                          alert("Please Enter only 6digit number")}
+                                    else if(y.slice(0,5)==x.slice(0,5)){
+                                       document.getElementById("delayMsg").innerHTML="5digit correct guesses";
+                                   }
+                                   else if(y.slice(0,4)==x.slice(0,4)){
+                                       document.getElementById("delayMsg").innerHTML="4digit correct guesses";
+                                   }
+                                    else if(y.slice(0,3)==x.slice(0,3)){
+                                       document.getElementById("delayMsg").innerHTML="3digit correct guesses";
+                                   }
+                                    else if(y.slice(0,2)==x.slice(0,2)){
+                                       document.getElementById("delayMsg").innerHTML="2digit correct guesses";
+                                   }
+                                   else if(y.slice(0,1)==x.slice(0,1)){
+                                       document.getElementById("delayMsg").innerHTML="1digit correct guesses";
+                                   } 
+                                    else{ 
+                                        document.getElementById("delayMsg").innerHTML="Better Luck Next Time!! try again";
+                                   }
+                 }
+                  function reDirect(){
+                          window.location="firstpage.html";
+                      }
+                 
+        </script>
+
+     <p id="seeIt"></p>
+         </div>
+       <h1 style="text-align:center; padding:45px;color: red;">Thank You for trying my page, @Mark</h1>
+</body>
+
+</html>
