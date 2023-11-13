@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+       body{background-image: url('Matrix.jpg');
+         background-size:150%;
+         background-repeat:no-repeat;  }
+</style>
+
+</head>
+
+<body>
+     <div style="text-align:center; padding:70px; background-color:lightgrey; border-radius:10px;">
+       <legend><h2 style="color:blue;">Generate the Number</h2></legend>
+        <p id="see" ></p>
+        <button onclick="generateItem()">Generate</button>
+        <p id="delayMsg"></p>
+      
+         <script>
+            function generateItem(){
+                var x=
+                 localStorage.number=Math.floor((Math.random()*(999999-100000+1))+100000);
+                 document.getElementById("see").innerHTML=x;
+                 document.getElementById("delayMsg").innerHTML="Refreshing the page in 10 seconds";
+                   var myVar = setTimeout(function(){ window.location="secondpage.html"; }, 5000);
+}
+        </script>
+         </div>
+</body>
+
+</html>
